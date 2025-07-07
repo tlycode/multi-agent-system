@@ -42,16 +42,15 @@ Task Delegation → Specialized Agents → Response Aggregation → Final Output
 To run the application, in one terminal run `npm start start-agents`
 This will start the Web Research Agent and the CRM Research Agent.
 
-Then run `npm start interactive` to start the Supervisor Agent and the CLI.
+Then, in a separate terminal window, run `npm start interactive` to start the Supervisor Agent and the CLI.
 
 From here you can ask questions which the Supervisor agent will parse 
 and delegate to the appropriate task agent (web or CRM).
 
 ## Sample input/output
-Input: ` find me info on acme company and check if john doe is a contact there`
+Input: `Find me info on Acme company and check if John Doe is a contact there.`
 
 Output: 
-
 > Processing request: find me info on acme company and check if john doe is a contact there
 
 >Parsed 2 task(s): [
