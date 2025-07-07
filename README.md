@@ -8,15 +8,38 @@ was to use A2A and MCP, output for any input reflects proof of completion
 instead of responding with information the customer would prefer.
 
 ## Architecture
-### cli.js
 
-### Agents
+This multi-agent system implements a hierarchical orchestration model using Agent-to-Agent (A2A) and Model Context Protocol (MCP) communication patterns.
 
-### Protocols
+### Core Components
+
+#### Supervisor Layer
+- **SupervisorAgent**: Central orchestrator that parses user requests, discovers task agents, delegates tasks, and aggregates responses from multiple specialized agents
+
+#### Task Agents
+- **WebResearchAgent** (port 3001): Handles web research and information gathering with capabilities like web_search, url_analysis, and content_extraction
+- **CRMResearchAgent** (port 3002): Manages CRM data analysis and customer research with customer_lookup, contact_analysis, and crm_queries capabilities
+
+#### Communication Protocols
+- **A2A Protocol**: Enables agent-to-agent communication, discovery, and task delegation via HTTP
+- **MCP Protocol**: Manages tool registration, resource access, and capability introspection within agents
+- **AgentCard**: Handles agent identity and capability advertisement
+
+### Data Flow
+```
+User Input → CLI → SupervisorAgent → TaskParser → Agent Selection → 
+Task Delegation → Specialized Agents → Response Aggregation → Final Output
+```
+
+### Key Features
+- **Multi-task Processing**: Parses complex queries into discrete tasks and processes them in parallel
+- **Dynamic Agent Discovery**: Agents self-describe capabilities through standardized protocols
+- **Extensible Architecture**: Easy addition of new agents and tools through protocol abstraction
+- **Interactive CLI**: Supports multiple interaction modes (one-shot, interactive, batch)
 
 
 ## Instructions
-To run the appliaction, in one terminal run `npm start start-agents`
+To run the application, in one terminal run `npm start start-agents`
 This will start the Web Research Agent and the CRM Research Agent.
 
 Then run `npm start interactive` to start the Supervisor Agent and the CLI.
