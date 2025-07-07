@@ -37,6 +37,31 @@ Task Delegation → Specialized Agents → Response Aggregation → Final Output
 - **Extensible Architecture**: Easy addition of new agents and tools through protocol abstraction
 - **Interactive CLI**: Supports multiple interaction modes (one-shot, interactive, batch)
 
+### Agent Cards
+
+Each agent exposes its capabilities through a standardized Agent Card:
+
+#### SupervisorAgent
+- **Name**: SupervisorAgent
+- **Description**: Coordinates and delegates tasks to specialized agents
+- **Capabilities**: `task_delegation`, `response_aggregation`, `agent_discovery`
+- **Supported Tasks**: `coordinate`, `delegate`, `aggregate`
+- **Endpoint**: `http://localhost:3000`
+
+#### WebResearchAgent
+- **Name**: WebResearchAgent
+- **Description**: Specialized agent for web-based research and information gathering
+- **Capabilities**: `web_search`, `url_analysis`, `content_extraction`
+- **Supported Tasks**: `web_research`, `search_query`, `url_fetch`
+- **Endpoint**: `http://localhost:3001`
+
+#### CRMResearchAgent
+- **Name**: CRMResearchAgent
+- **Description**: Specialized agent for CRM data analysis and customer research
+- **Capabilities**: `customer_lookup`, `contact_analysis`, `crm_queries`
+- **Supported Tasks**: `crm_research`, `customer_search`, `contact_lookup`
+- **Endpoint**: `http://localhost:3002`
+
 
 ## Instructions
 To run the application, in one terminal run `npm start start-agents`
