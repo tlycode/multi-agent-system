@@ -48,6 +48,9 @@ From here you can ask questions which the Supervisor agent will parse
 and delegate to the appropriate task agent (web or CRM).
 
 ## Sample input/output
+As of now, the output only contains logs of what is happening with the various agents and not what a user/customer
+would expect to see.
+
 Input: `Find me info on Acme company and check if John Doe is a contact there.`
 
 Output: 
